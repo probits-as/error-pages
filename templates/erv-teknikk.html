@@ -142,21 +142,46 @@
       background-size: 50px 50px;
     }
 
-    .home-link {
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
       display: inline-block;
       padding: 0.875rem 2rem;
-      background: var(--color-primary);
       color: white;
       text-decoration: none;
       border-radius: 6px;
       font-weight: 600;
       transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
       box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
     }
 
-    .home-link:hover {
+    .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
+    }
+
+    .btn-secondary {
+      background: var(--color-secondary);
+      box-shadow: 0 4px 12px rgba(0, 168, 107, 0.2);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 168, 107, 0.3);
     }
 
     .footer {
@@ -247,6 +272,15 @@
       <div class="error-message">{{ message }}</div>
       <div class="divider"></div>
       <p class="error-description" data-l10n>{{ description }}</p>
+
+      <div class="action-buttons">
+        <button class="btn btn-primary" onclick="window.history.back()">
+          ← Gå tilbake
+        </button>
+        <button class="btn btn-secondary" onclick="window.location.reload()">
+          ↻ Last på nytt
+        </button>
+      </div>
 
       <!-- {{ if show_details }} -->
       <div class="details">
